@@ -1,8 +1,13 @@
 import curses 
 import time 
+import random 
 
-typing_text = 'The quick brown fox jumps over the lazy dog'
 
+def randomPangram() -> str : 
+    line = open('assets/pangram.txt').read().splitlines()
+    return random.choice(line)
+
+typing_text = randomPangram() 
 
 def main(stdscr) : 
     curses.start_color()
